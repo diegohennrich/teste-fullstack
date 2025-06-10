@@ -5,7 +5,6 @@ import { BooksController } from "./books.controller";
 import { ListBooksService } from "./Services/list-books.service";
 import { CreateBookService } from "./Services/create-book.service";
 import { BooksRepository } from "./Repository/books.repository";
-import { GetBookService } from "./Services/get-book.service";
 import { UpdateBookService } from "./Services/update-book.service";
 import { DeleteBookService } from "./Services/delete-book.service";
 import { GetBookReviewsService } from "./Services/get-book-reviews.service";
@@ -22,7 +21,7 @@ import { DeleteReviewService } from "../Reviews/Services/delete-review.service";
         ])
     ],
     controllers: [BooksController],
-    providers: [ListBooksService, CreateBookService, BooksRepository, GetBookService, UpdateBookService, DeleteBookService, GetBookReviewsService, ReviewsRepository, GetTopRatedBookService, DeleteReviewService],
+    providers: [ListBooksService, CreateBookService, BooksRepository, UpdateBookService, DeleteBookService, GetBookReviewsService, ReviewsRepository, GetTopRatedBookService, DeleteReviewService],
 })
 
 export class BooksModule {}

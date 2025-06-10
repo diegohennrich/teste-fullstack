@@ -2,7 +2,6 @@ import { Body, Controller, Delete, Get, Param, Post, Put, Query } from "@nestjs/
 import { ListBooksService } from "./Services/list-books.service";
 import { CreateBookDTO } from "./Dtos/create-book.dto";
 import { CreateBookService } from "./Services/create-book.service";
-import { GetBookService } from "./Services/get-book.service";
 import { UpdateBookService } from "./Services/update-book.service";
 import { DeleteBookService } from "./Services/delete-book.service";
 import { GetBookReviewsService } from "./Services/get-book-reviews.service";
@@ -13,7 +12,6 @@ export class BooksController {
     constructor(
         private readonly listBooksService: ListBooksService,
         private readonly createBookService: CreateBookService,
-        private readonly getBookService: GetBookService,
         private readonly updateBookService: UpdateBookService,
         private readonly deleteBookService: DeleteBookService,
         private readonly getBookReviewsService: GetBookReviewsService,
@@ -31,12 +29,6 @@ export class BooksController {
       const books = await this.listBooksService.handle();
       return books;
     }
-
-    // @Get(':id')
-    // public async getBook(@Param('id') id: string): Promise<any> {
-    //   const book = await this.getBookService.handle(id);
-    //   return book;
-    // }
 
     @Get('top')
     public async getTopRatedBooks(@Query('limit') limit: string): Promise<any> {
