@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { BooksRepository } from "../Repository/books.repository";
-import { ReviewsRepository } from "src/Modules/Reviews/Repository/reviews.repository";
+import { ReviewsRepository } from "../../Reviews/Repository/reviews.repository";
 
 @Injectable()
 export class GetTopRatedBookService {
